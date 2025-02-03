@@ -1,0 +1,29 @@
+repos:
+-   repo: https://github.com/pre-commit/pre-commit-hooks
+    rev: v1.2.3
+    hooks:
+    -   id: trailing-whitespace
+    -   id: check-yaml
+    -   id: end-of-file-fixer
+-   repo: https://github.com/psf/black
+    rev: 22.10.0
+    hooks:
+    -   id: black
+-   repo: local
+    hooks:
+    -   id: pylint
+        stages: [commit, push]
+        types: [python]
+        name: pylint
+        entry: pylint
+        language: system
+        pass_filenames: true
+        always_run: false
+    -   id: pytest-check
+        stages: [commit, push]
+        types: [python]
+        name: pytest-check
+        entry: python -m project_name.my_module -v tests/
+        language: system
+        pass_filenames: false
+        always_run: true
