@@ -1,11 +1,11 @@
 name: Example
 
-on: 
+on:
   workflow_dispatch:
+runs:
+  using: 'composite'
+  steps:
+    - name: Step 1
+      run: echo "Hello"
 
-jobs:
-  example-job:
-    runs-on: ubuntu-latest
-    steps:
-      - name: Greet
-        run: echo "Hi"
+
