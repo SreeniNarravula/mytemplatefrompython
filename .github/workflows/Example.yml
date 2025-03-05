@@ -1,0 +1,6 @@
+name: Example 
+runs-on: ubuntu-latest
+on: workflow_dispatch
+steps:
+  - run: echo "Hi"
+ 
