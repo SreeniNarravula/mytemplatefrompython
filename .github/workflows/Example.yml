@@ -1,6 +1,11 @@
-name: Example 
-runs-on: ubuntu-latest
-on: workflow_dispatch
-steps:
-  - run: echo "Hi"
- 
+name: Example
+
+on: 
+  workflow_dispatch:
+
+jobs:
+  example-job:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Greet
+        run: echo "Hi"
